@@ -1,5 +1,4 @@
-function CharacterItem(props) {
-
+function CharacterDetail (props){ 
 
     if (props.character.image === '') {
         return (props.character.image =
@@ -21,10 +20,13 @@ function CharacterItem(props) {
             <p className="">{`Genero: ${props.character.gender}`}</p>
   
             <p className="">{`Casa: ${props.character.house}`}</p>
+
+            
+            
+
         
           </li>
         );
-    
-}}
 
-export default CharacterItem;
+}}
+export default CharacterDetail;
