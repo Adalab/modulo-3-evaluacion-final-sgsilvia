@@ -1,3 +1,26 @@
+@import './variables';
 .CharacterList {
-  background-color: black;
+  background-color: $principal-color;
+  text-decoration: none;
+
+  &__li {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    padding-inline-start: unset;
+    padding-top: 20px;
+    margin-block-end: unset;
+  }
+}
+
+@media (min-width: 768px) {
+  .CharacterList__li {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .CharacterList__li {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }

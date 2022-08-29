@@ -1,3 +1,5 @@
+import '../styles/Filters.scss';
+
 function FilterByName(props) {
 
     const handleKeyUp =(ev)=> {

@@ -1,3 +1,4 @@
+import '../styles/Header.scss';
 import { Link} from "react-router-dom"
 
 function CharacterDetail (props){ 
@@ -19,7 +20,7 @@ function CharacterDetail (props){
               title={`Foto de ${props.character.name}`}
             ></img>
   
-            <h2 className="">{props.character.name}</h2>
+            <h2 className="h">{props.character.name}</h2>
             <p className="">{`Estatus: ${props.character.alive}`}</p>
             <p className="">{`Especie: ${props.character.species}`}</p>
   

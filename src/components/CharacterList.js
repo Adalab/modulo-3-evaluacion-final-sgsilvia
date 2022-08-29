@@ -15,7 +15,7 @@ function CharacterList(props) {
   return (
     <>
       <section className='CharacterList'>
-        <ul className="">
+        <ul className="CharacterList__li">
 
           {characterElements}
         </ul>

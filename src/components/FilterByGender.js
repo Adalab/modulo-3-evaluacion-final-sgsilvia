@@ -1,4 +1,4 @@
-
+import '../styles/FilterByGender.scss';
 function FilterByGender(props) {
     
 const handleOnChange = (ev)=> {

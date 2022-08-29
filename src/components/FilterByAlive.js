@@ -25,6 +25,8 @@ function FilterByAlive(props) {
           onChange={handleOnChange}
         />
       </form>
+
+    
     </>
   );
 }

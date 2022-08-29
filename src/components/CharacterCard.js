@@ -1,25 +1,24 @@
+import '../styles/CharacterCard.scss';
 import { Link } from "react-router-dom"
 
 function CharacterCard(props) {
 
 
-    if (props.character.image === '') {
-        return (props.character.image =
-          'https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter');
-      } else {
         return (
-          <section >
+          <section className='section' >
             <Link to={`character/${props.character.id} `} >
+
+              
             <img
-              className=""
+              className="section__characterImage"
               src={props.character.image}
               alt={`Foto de ${props.character.name}`}
               title={`Foto de ${props.character.name}`}
             ></img>
   
-            <h2 className="">{props.character.name}</h2>
+            <h2 className="section__characterTitle">{props.character.name}</h2>
             
-            <p className="">{`Especie: ${props.character.species}`}</p>
+            <p className="section__characterSpecie">{`Especie: ${props.character.species}`}</p>
   
           
   
@@ -28,6 +27,6 @@ function CharacterCard(props) {
           </section>
         );
     
-}}
+}
 
 export default CharacterCard;

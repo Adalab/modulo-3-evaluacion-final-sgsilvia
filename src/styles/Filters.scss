@@ -1,3 +1,12 @@
+@import './variables';
 .filters {
-  background-color: black;
+  background-color: $principal-color;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: $font-text;
+  font-size: 2em;
 }

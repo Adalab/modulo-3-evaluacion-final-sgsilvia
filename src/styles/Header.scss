@@ -1,7 +1,12 @@
+@import './variables';
 .header {
-  background-color: url(../images/logo.png) center no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   background-color: black;
   &__imgTitle {
-    height: 50px;
+    height: 30vh;
   }
 }
