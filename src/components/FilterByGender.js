@@ -6,7 +6,7 @@ const handleOnChange = (ev)=> {
  }
 
     return (
-        <>
+        <> 
             <label
                 className=""
                 htmlFor="gender">Género:</label>

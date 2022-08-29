@@ -1,6 +1,7 @@
 import FilterByName from './FilterByName';
 import FilterByGender from './FilterByGender';
 import FilterByHouse from './FilterByHouse';
+import FilterByAlive from './FilterByAlive';
 
 
 function Filters (props){
@@ -19,6 +20,7 @@ return (
     
     handleFilterGender= { props.handleFilterGender} />
 
+<FilterByAlive  filterByAlive ={ props.filterByAlive} handleFilterAlive = { props.handleFilterAlive} />
 
   </>  
 )
