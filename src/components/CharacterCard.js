@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function CharacterCard(props) {
 
 
@@ -6,7 +8,8 @@ function CharacterCard(props) {
           'https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter');
       } else {
         return (
-          <li >
+          <section >
+            <Link to={`character/${props.character.id} `} >
             <img
               className=""
               src={props.character.image}
@@ -20,9 +23,9 @@ function CharacterCard(props) {
   
           
   
-     
+            </Link>
         
-          </li>
+          </section>
         );
     
 }}

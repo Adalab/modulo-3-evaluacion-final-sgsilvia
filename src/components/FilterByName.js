@@ -1,17 +1,20 @@
 function FilterByName(props) {
 
     const handleKeyUp =(ev)=> {
-    
+
+  
         props.handleFilterName (ev.target.value)
         console.log(ev.target.value);
      };
+     if (props.filterName !== props.dataCharacter){ return <p> No hay ningún personaje que coincida con la palabra { props.filterName}  </p>}
+else {
 
     return (<>
-    <form>
+    <form   onSubmit={props.handleSubmit}>
       <label> Buscar por personaje</label>
 
       <input
-        className="n"
+        className=""
         type="text"
         name="name"
         id="name"
@@ -19,7 +22,7 @@ function FilterByName(props) {
        onChange={handleKeyUp}
       />
     </form>
-  </> )
+  </> )}
   
 }
 

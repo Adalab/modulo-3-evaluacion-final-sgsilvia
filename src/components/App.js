@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
-import { Route, Routes } from 'react-router-dom';
+
+import { matchPath, Route, Routes, useLocation } from "react-router-dom";
+
 
 function App() {
   const [dataCharacter, setDataCharacter] = useState([]);
@@ -29,10 +31,16 @@ function App() {
   };
     
 */
+const handleSubmit = (ev) => {
+  ev.preventDefault();
+};
 
   const characterFilter = dataCharacter
     .filter((character) => {
-      return character.name.toLowerCase().includes(filterName.toLowerCase());
+      
+
+       return character.name.toLowerCase().includes(filterName.toLowerCase())
+     
     })
     .filter((character) => {
       return filterHouse === 'all' ? true : character.house === filterHouse;
@@ -45,38 +53,43 @@ function App() {
       }
     });
 
+    const { pathname } = useLocation();
+  console.log(pathname);
+  const dataPath = matchPath("/character/:characterId", pathname);
+
+  const characterId = dataPath !== null ? dataPath.params.characterId : null;
+  const characterFound = dataCharacter.find(character => { return character.id === characterId });
   return (
     <div className="App">
       <header className="App-header">
         
       </header>
+<Routes>
 
-      <Routes>
-        <Route
-        path="/"
-        element={ <>
-        <section>
-        <Filters
-          filterName={filterName}
-          handleFilterName={setFilterName}
-          filterHouse={filterHouse}
-          handleFilterHouse={setFilterHouse}
-          filterGender={filterGender}
-          handleFilterGender={setFilterGender}
-        />
+  <Route path='/'
+  element={ 
+    <><Filters
+    filterName={filterName}
+    handleFilterName={setFilterName}
+    handleSubmit = {handleSubmit} 
+    dataCharacter ={dataCharacter}
+    filterHouse={filterHouse}
+    handleFilterHouse={setFilterHouse}
+    filterGender={filterGender}
+    handleFilterGender={setFilterGender}
+  />
 
-        <CharacterList characters={characterFilter} />
-        </section>
-        </>}
-        />
+  <CharacterList characters={characterFilter} />
+    </>
+  }  />
 
-        <Route
-        path= "character"
-        element={ CharacterDetail}
-        
-        />
-
-      </Routes>
+  <Route
+  path='/character/:characterId'
+  element ={ <CharacterDetail character ={characterFound} />}
+  
+  />
+</Routes>
+      
     </div>
   );
 }

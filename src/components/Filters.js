@@ -7,7 +7,7 @@ function Filters (props){
 return (
 <>
     <FilterByName filterName ={ props.filterName}   
-    handleFilterName = { props.handleFilterName} />
+    handleFilterName = { props.handleFilterName} handleSubmit = {props.handleSubmit}  dataCharacter={props.dataCharacter} />
     <FilterByHouse 
     filterHouse = { props.filterHouse}
     handleFilterHouse = { props.handleFilterHouse}

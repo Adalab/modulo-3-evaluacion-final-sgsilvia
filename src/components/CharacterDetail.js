@@ -1,3 +1,5 @@
+import { Link} from "react-router-dom"
+
 function CharacterDetail (props){ 
 
     if (props.character.image === '') {
@@ -6,6 +8,8 @@ function CharacterDetail (props){
       } else {
         return (
           <li >
+       
+            <Link  to={ `/character/${props.character.id} `}  >
             <img
               className=""
               src={props.character.image}
@@ -24,7 +28,7 @@ function CharacterDetail (props){
             
             
 
-        
+            </Link>
           </li>
         );
 
