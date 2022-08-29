@@ -1,3 +1,4 @@
+import '../styles/CharacterList.scss';
 
 
 import CharacterCard from './CharacterCard';
@@ -13,7 +14,7 @@ function CharacterList(props) {
 
   return (
     <>
-      <section>
+      <section className='CharacterList'>
         <ul className="">
 
           {characterElements}

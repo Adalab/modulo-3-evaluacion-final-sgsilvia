@@ -13,7 +13,7 @@ function FilterByName(props) {
 
       <input
         className=""
-        placeholder='Dumbledore'
+        placeholder='ex:"Dumbledore"'
         type="text"
         name="name"
         id="name"

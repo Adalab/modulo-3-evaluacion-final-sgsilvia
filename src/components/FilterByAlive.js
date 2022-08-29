@@ -10,14 +10,18 @@ function FilterByAlive(props) {
         <input
           type="checkbox"
           name="true"
+          id= "alive"
           value={props.filterAlive}
           onChange={handleOnChange}
+          checked={ props.filterAlive=== true}
         />
-        <label htmlFor=""> Muerto</label>
+        <label htmlFor="alive"> Muerto</label>
         <input
           type="checkbox"
           name="false"
-          value={props.filterAlive}
+          id = "alive"
+         value={props.filterAlive}
+         checked={ props.filterAlive=== false}
           onChange={handleOnChange}
         />
       </form>

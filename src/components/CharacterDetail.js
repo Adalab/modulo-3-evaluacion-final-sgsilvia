@@ -10,6 +10,8 @@ function CharacterDetail (props){
           <li >
        
             <Link  to={ `/character/${props.character.id} `}  >
+
+              <section>
             <img
               className=""
               src={props.character.image}
@@ -25,7 +27,9 @@ function CharacterDetail (props){
   
             <p className="">{`Casa: ${props.character.house}`}</p>
 
-            
+            </section>
+
+            <Link to='/'>Ir al inicio</Link>
             
 
             </Link>

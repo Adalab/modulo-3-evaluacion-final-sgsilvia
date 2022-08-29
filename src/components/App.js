@@ -1,16 +1,21 @@
 import getDataApi from '../services/getDataApi';
+import localStorage from '../services/localStorage';
 import { useEffect, useState } from 'react';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
 import { matchPath, Route, Routes, useLocation } from 'react-router-dom';
+import Header from './Header';
+import logo from '../images/logo.png'
+import wizard from '../images/wizard.jpg'
+import '../styles/App.scss';
 
 function App() {
   const [dataCharacter, setDataCharacter] = useState([]);
   const [filterName, setFilterName] = useState('');
   const [filterHouse, setFilterHouse] = useState('Gryffindor');
   const [filterGender, setFilterGender] = useState('all');
- 
+  const [filterAlive, setFilterAlive] = useState('');
 
   useEffect(() => {
     getDataApi().then((dataFromApi) => {
@@ -18,6 +23,10 @@ function App() {
       console.log(dataFromApi);
     });
   }, []);
+  /* 
+  useEffect(() => {
+    localStorage.set('dataCharacter', dataCharacter);
+  }, [dataCharacter]); */
 
   //filtros//
 
@@ -59,7 +68,11 @@ function App() {
   });
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <Header   
+      logo ={logo}
+      wizard={wizard} />
+
+      <main className='main'> </main>
       <Routes>
         <Route
           path="/"
@@ -74,7 +87,8 @@ function App() {
                 handleFilterHouse={setFilterHouse}
                 filterGender={filterGender}
                 handleFilterGender={setFilterGender}
-              
+                filterAlive={filterAlive}
+                handleFilterAlive={setFilterAlive}
               />
 
               <CharacterList characters={characterFilter} />
@@ -87,6 +101,8 @@ function App() {
           element={<CharacterDetail character={characterFound} />}
         />
       </Routes>
+
+      <footer> </footer>
     </div>
   );
 }
