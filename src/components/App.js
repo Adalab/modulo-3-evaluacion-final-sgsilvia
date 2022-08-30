@@ -8,7 +8,7 @@ import { matchPath, Route, Routes, useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer.js';
 import logo from '../images/logo.png'
-import wizard from '../images/wizard.jpg'
+import wizard from '../images/wizard.png'
 import '../styles/App.scss';
 
 function App() {
