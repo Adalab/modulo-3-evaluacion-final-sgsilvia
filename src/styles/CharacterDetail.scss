@@ -31,7 +31,7 @@
   }
 }
 
-.link {
+.backLink {
   display: block;
   margin-top: 30px;
   text-decoration: none;
@@ -42,6 +42,7 @@
   color: gray;
   padding: 20px;
   border-radius: 30px;
+  text-decoration: none;
 }
 @media (min-width: 768px) {
   .section__characterImage {
@@ -50,4 +51,8 @@
 
     border-radius: 120px;
   }
+}
+
+.link {
+  text-decoration: none;
 }

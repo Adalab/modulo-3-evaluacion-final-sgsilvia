@@ -16,7 +16,7 @@ function App() {
   const [filterName, setFilterName] = useState('');
   const [filterHouse, setFilterHouse] = useState('Gryffindor');
   const [filterGender, setFilterGender] = useState('all');
-  const [filterAlive, setFilterAlive] = useState('');
+  const [filterAlive, setFilterAlive] = useState(false);
 
   useEffect(() => {
     getDataApi().then((dataFromApi) => {
@@ -24,22 +24,11 @@ function App() {
       console.log(dataFromApi);
     });
   }, []);
-  /* 
+  
   useEffect(() => {
     localStorage.set('dataCharacter', dataCharacter);
-  }, [dataCharacter]); */
+  }, [dataCharacter]); 
 
-  //filtros//
-
-  /* const handleFilterName = (value) => {
-    setFilterName(value);
-  };
-  
-  const handleFilterHouse = (value) => {
-    setFilterHouse(value);
-  };
-    
-*/
   const handleSubmit = (ev) => {
     ev.preventDefault();
   };
@@ -57,8 +46,9 @@ function App() {
       } else {
         return character.gender === filterGender;
       }
-    });
-
+    })
+  
+  
   const { pathname } = useLocation();
   console.log(pathname);
   const dataPath = matchPath('/character/:characterId', pathname);
@@ -67,6 +57,13 @@ function App() {
   const characterFound = dataCharacter.find((character) => {
     return character.id === characterId;
   });
+
+  const handleReset = () => {
+   setFilterName("");
+    setFilterHouse("gryffindor");
+    setFilterGender("all");
+  
+  };
   return (
     <div className="App">
       <Header   
@@ -80,6 +77,7 @@ function App() {
           element={
             <>
               <Filters
+                  handleReset={handleReset}
                 filterName={filterName}
                 handleFilterName={setFilterName}
                 handleSubmit={handleSubmit}

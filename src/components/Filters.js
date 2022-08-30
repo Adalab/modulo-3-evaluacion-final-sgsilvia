@@ -21,7 +21,18 @@ return (
     
     handleFilterGender= { props.handleFilterGender} />
 
-<FilterByAlive  filterByAlive ={ props.filterByAlive} handleFilterAlive = { props.handleFilterAlive} />
+<FilterByAlive  filterAlive={props.filterAlive}
+handleFilterAlive = { props.handleFilterAlive} />
+<button
+        type="reset"
+        onClick={props.handleReset}
+        className={`reset ${props.selectValue}`}
+      >
+        <i className="fas fa-trash-alt"></i>Eliminar búsqueda
+      </button>
+    
+
+
 
   </div>  
 )

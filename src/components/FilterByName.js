@@ -11,7 +11,7 @@ function FilterByName(props) {
      
      if (props.filterName === props.dataCharacter || " " ) return (<>
     <form   onSubmit={props.handleSubmit}>
-      <label> Buscar por personaje</label>
+      <label> Buscar por personaje: </label>
 
       <input
         className=""
