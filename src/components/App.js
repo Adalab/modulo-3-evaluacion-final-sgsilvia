@@ -47,6 +47,7 @@ function App() {
         return character.gender === filterGender;
       }
     })
+
   
   
   const { pathname } = useLocation();
